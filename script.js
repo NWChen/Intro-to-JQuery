@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+	// Pressing the enter/return key yields the same behavior
+	// as the "Go" button.
+	$("#github-username").keydown(function(event) {
+		if(event.keyCode == 13)
+			$("#submit-button").trigger('click');
+	});
+
 	// Function to handle the clicking of the "Go" button
 	// and display GitHub user information.
 	$("#submit-button").click(function() {
