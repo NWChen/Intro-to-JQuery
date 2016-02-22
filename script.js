@@ -51,6 +51,18 @@ function displayData(isValid, userData) {
 		$("#github-data").html("<span>User does not exist!</span>");
 	else {
 		var username = "@" + userData["username"];
+		$.each(userData, function(index, value) {
+			if(value == null)
+				value = "unlisted"
+		});
+		$("#github-data").html("
+			<p><strong>" + username + "</strong> has 
+			<ul> 
+				<li class=data><strong>" + userData["public_repos"] + "</strong> public repositories" + "
+				<li class=data><strong>" + userData["followers"] + "</strong> followers" + "
+				<li class=data>follows <strong>" + userData["following"] + "</strong> users" + "
+				<li class=data>is located in <strong>" + userData["location"] + "</strong>
+			</ul>");
 		$("#github-data").html("<span><strong>" + username +
 			 "</strong> has <strong>" + userData["followers"] + "</strong> followers, follows <strong>" +
 			 userData["following"] + "</strong> users, is located in <strong>" + userData["location"] + "</strong>, and has <strong>" +
