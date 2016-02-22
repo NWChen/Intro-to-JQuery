@@ -47,6 +47,7 @@ function requestJSON(url, callback) {
 
 // Function to display data from GitHub.
 function displayData(isValid, userData) {
+	
 	if(isValid == false)
 		$("#github-data").html("<span>User does not exist!</span>");
 	else {
@@ -63,11 +64,6 @@ function displayData(isValid, userData) {
 				<li class=data>follows <strong>" + userData["following"] + "</strong> users" + "
 				<li class=data>is located in <strong>" + userData["location"] + "</strong>
 			</ul>");
-		$("#github-data").html("<span><strong>" + username +
-			 "</strong> has <strong>" + userData["followers"] + "</strong> followers, follows <strong>" +
-			 userData["following"] + "</strong> users, is located in <strong>" + userData["location"] + "</strong>, and has <strong>" +
-			 userData["public_repos"] + "</strong> public repositories. <strong>" + username + "</strong>'s real name is <strong>" +
-			 userData["name"] + "</strong>.");
 
 	}
 }
