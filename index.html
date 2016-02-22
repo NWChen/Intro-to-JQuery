@@ -1,0 +1,39 @@
+<head>
+	<!-- JQuery framework for writing shorter, simpler JavaScript. -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+	<!-- Bootstrap framework for a simple, good-looking interface. -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<!-- Custom styles and JavaScript. -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="base-vertical row">
+			<div class="col-md-8 col-md-offset-2">
+				<h1>GitWatcher</h1>
+				<p>
+					Display a GitHub user's profile without all that pesky code.
+				<p>
+					Try it out! Enter a username below.
+				</p>
+
+				<p class="input-group">
+					<span class="input-group-addon">@</span>
+					<input type="text" class="form-control" id="github-username" placeholder="NWChen">
+					<p class="help=block">
+						<small>Built with JQuery.</small>
+					</p>
+					<p>
+						<button class="btn btn-success btn-lg" id="submit-button" type="button">Go</button>
+					</p>
+				</p>
+				<div id="github-data"></div>
+			</div>
+		</div>
+	</div>
+</body>
