@@ -18,7 +18,7 @@ $(document).ready(function() {
 			else {
 
 				// Extract useful data from the JSON response.
-				var data = new Array();
+				var data = {};
 				data["username"] = username;
 				data["avatar_url"] = json.avatar_url;
 				data["email"] = json.email;
@@ -47,23 +47,21 @@ function requestJSON(url, callback) {
 
 // Function to display data from GitHub.
 function displayData(isValid, userData) {
-	
+
 	if(isValid == false)
 		$("#github-data").html("<span>User does not exist!</span>");
 	else {
 		var username = "@" + userData["username"];
-		$.each(userData, function(index, value) {
+		$.each(userData, function(key, value) {
 			if(value == null)
-				value = "unlisted"
+				userData[key] = "unlisted";
 		});
-		$("#github-data").html("
-			<p><strong>" + username + "</strong> has 
-			<ul> 
-				<li class=data><strong>" + userData["public_repos"] + "</strong> public repositories" + "
-				<li class=data><strong>" + userData["followers"] + "</strong> followers" + "
-				<li class=data>follows <strong>" + userData["following"] + "</strong> users" + "
-				<li class=data>is located in <strong>" + userData["location"] + "</strong>
-			</ul>");
+		$("#github-data").html("<p><strong>" + username + "</strong> has <ul>" +
+				"<li class=data><strong>" + userData["public_repos"] + "</strong> public repositories" +
+				"<li class=data><strong>" + userData["followers"] + "</strong> followers" +
+				"<li class=data>follows <strong>" + userData["following"] + "</strong> users" + 
+				"<li class=data>is located in <strong>" + userData["location"] + "</strong>" +
+			"</ul>");
 
 	}
 }
